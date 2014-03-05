@@ -20,20 +20,8 @@ get '/auth' do
 
   # at this point in the code is where you'll need to create your user account and store the access token
 
-
-  # -------------------------------------------------------------------------------
-  # ToDo (from Release 1):
-  # Create the new user, set her as "logged in"
-  # and store her access token and secret along with her user record.
-
-  p @access_token
-
   new_user = User.create(username: @access_token.params[:screen_name], oauth_token: @access_token.params[:oauth_token] , oauth_secret: @access_token.params[:oauth_token_secret] )
-  p new_user
+  session[:id] = new_user.id
 
-
-
-
-  # -------------------------------------------------------------------------------
   erb :index
 end

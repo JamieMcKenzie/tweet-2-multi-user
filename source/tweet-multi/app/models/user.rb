@@ -1,14 +1,15 @@
 class User < ActiveRecord::Base
   # Remember to create a migration!
 
-  def loggedin?
-    !!session[:id]
-  end
+# To implement later
+  # def loggedin?
+  #   !!session[:id]
+  # end
 
-  def auth_user
+  # def auth_user
 
-    session[:id] = new_user[:id]
-  end
+  #   session[:id] = self[:id]
+  # end
 
 end
 
